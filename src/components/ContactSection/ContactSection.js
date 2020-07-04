@@ -62,7 +62,7 @@ const ContactSection = () => {
 
       axios({
         method: 'post',
-        url: '/send',
+        url: 'https://agile-cove-00243.herokuapp.com/send',
         data: formData,
       }).then((response) => {
         if (response.data.status === 'success') {
