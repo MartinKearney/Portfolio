@@ -8,14 +8,12 @@ import AboutSection from './AboutSection/AboutSection';
 import ContactSection from './ContactSection/ContactSection';
 
 import 'materialize-css/dist/css/materialize.min.css';
-import M from 'materialize-css/dist/js/materialize.min.js';
 import './App.css';
 
 const App = () => {
   return (
     <Fragment>
       <NavBar />
-
       <section id='Home-Section'>
         <Element name='home'>
           <MainHeader>
