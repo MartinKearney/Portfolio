@@ -17,7 +17,7 @@ const App = () => {
       <section id='Home-Section'>
         <Element name='home'>
           <MainHeader>
-            <p>Hi, I'm Mart</p>
+            <p>Hi, I'm Martin</p>
             <p>A Web Developer</p>
           </MainHeader>
         </Element>
