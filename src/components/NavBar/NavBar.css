@@ -1,0 +1,38 @@
+.NavBar-Container {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border: 1px solid #000;
+  background: #757575;
+}
+
+.no-background {
+  border: none;
+  background-color: transparent;
+}
+
+.NavBar-List ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.NavBar-List__item {
+  padding: 0 1rem;
+}
+
+.NavBar-List__item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.NavBar-List__item:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

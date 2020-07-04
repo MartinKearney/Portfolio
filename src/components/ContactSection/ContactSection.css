@@ -1,0 +1,50 @@
+.Contact-Container {
+  /* height: 100vh; */
+  /* background: #eee; */
+  height: auto;
+  padding: 1rem 0 6rem;
+}
+
+.Contact-header {
+  margin: 6rem 0 4rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.Form-Container {
+  border: 1px solid #000;
+  background: #fff;
+}
+
+.center-field {
+  text-align: center;
+}
+
+.input-field small {
+  color: crimson;
+  margin: 0.2rem 0;
+  display: block;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.feedback {
+  padding-bottom: 0.2rem;
+}
+
+.feedback small {
+  margin: 0.2rem 0;
+  display: block;
+}
+
+.main-error {
+  color: crimson;
+  text-align: center;
+}
+
+.success {
+  color: lime;
+  text-align: center;
+}

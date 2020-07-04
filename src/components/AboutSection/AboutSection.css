@@ -1,0 +1,18 @@
+.About-Container {
+  height: auto;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+h3 {
+  text-decoration: underline;
+  padding-bottom: 2rem;
+}
+
+.about-text {
+  margin: 0 auto;
+  font-size: 2rem;
+  width: 44%;
+  min-width: 22rem;
+  color: #fff;
+}

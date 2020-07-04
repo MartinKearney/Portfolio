@@ -1,0 +1,16 @@
+.Projects-Section {
+  min-height: 50vh;
+  padding: 6rem 0;
+}
+
+#Projects-Section__header {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 4rem;
+  font-size: 3rem;
+}
+
+.Projects-Section__links {
+  display: flex;
+  justify-content: space-around;
+}
