@@ -17,17 +17,18 @@
 }
 
 .sendingMsgText {
-  visibility: hidden;
   height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.sendingMsgText p {
   font-size: 1.5rem;
   color: red;
 }
+
+/* .sendingMsgText p {
+  font-size: 1.5rem;
+  color: red;
+} */
 
 .center-field {
   text-align: center;

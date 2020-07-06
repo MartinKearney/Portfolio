@@ -59,6 +59,7 @@ const ContactSection = () => {
       ((email && checkEmailForError()) || !email)
     ) {
       setShowSending(true);
+
       const formData = { name, email, message };
 
       axios({
@@ -104,8 +105,8 @@ const ContactSection = () => {
           className='col s12 Form-Container'
           style={{ borderRadius: '12px' }}
         >
-          <div className={`sendingMsgText ${showSending ? 'visible' : ''}`}>
-            <p>Sending message...</p>
+          <div className={`sendingMsgText ${showSending ? '' : 'hidden'}`}>
+            Sending message...
           </div>
           <div className='row' style={{ marginBottom: '0' }}>
             <div className='input-field col s12 m10 offset-m1 l6 offset-l3'>
