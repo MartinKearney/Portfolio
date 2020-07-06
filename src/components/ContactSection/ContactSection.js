@@ -32,6 +32,7 @@ const ContactSection = () => {
     if (!sendAttemptMade) {
       setSendAttemptMade(true);
     }
+    setShowSending(true);
     sendFormData();
   };
 
@@ -58,8 +59,6 @@ const ContactSection = () => {
       !checkNameForError() &&
       ((email && checkEmailForError()) || !email)
     ) {
-      setShowSending(true);
-
       const formData = { name, email, message };
 
       axios({
@@ -81,11 +80,16 @@ const ContactSection = () => {
           // alert('Message failed to send (:');
         }
       });
-      setShowSending(false);
+      // M.updateTextFields();
       resetForm();
     } else {
+      setShowSending(false);
       console.log('invalid form');
     }
+
+    setTimeout(() => {
+      setTimeout(setShowSending(false));
+    }, 3000);
   };
 
   const resetForm = () => {
@@ -93,6 +97,16 @@ const ContactSection = () => {
     setEmail('');
     setMessage('');
     setSendAttemptMade(false);
+    let nameLabel = document.getElementById('name-label');
+    if (nameLabel) {
+      nameLabel.classList.remove('active');
+    }
+    let emailLabel = document.getElementById('email-label');
+    if (emailLabel) {
+      emailLabel.classList.remove('active');
+    }
+    let messageLabel = document.getElementById('message-label');
+    messageLabel.classList.remove('active');
   };
 
   return (
@@ -118,7 +132,9 @@ const ContactSection = () => {
                 onChange={handleNameChange}
                 value={name}
               />
-              <label htmlFor='name'>Your Name...</label>
+              <label id='name-label' htmlFor='name'>
+                Your Name...
+              </label>
               <small
                 className={`name-error ${checkNameForError() ? '' : 'hidden'}`}
               >
@@ -136,7 +152,9 @@ const ContactSection = () => {
                 onChange={handleEmailChange}
                 value={email}
               />
-              <label htmlFor='email'>Your Email Address...</label>
+              <label id='email-label' htmlFor='email'>
+                Your Email Address...
+              </label>
               <small
                 className={`email-error ${
                   !checkEmailForError() && email ? '' : 'hidden'
@@ -156,7 +174,9 @@ const ContactSection = () => {
                 onChange={handleMessageChange}
                 value={message}
               />
-              <label htmlFor='icon_prefix2'>Message...</label>
+              <label id='message-label' htmlFor='icon_prefix2'>
+                Message...
+              </label>
             </div>
           </div>
 
