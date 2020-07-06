@@ -66,30 +66,25 @@ const ContactSection = () => {
         url: 'https://agile-cove-00243.herokuapp.com/send',
         data: formData,
       }).then((response) => {
+        setShowSending(false);
         if (response.data.status === 'success') {
           M.toast({
             html: 'Thanks - your message has been sent!',
             classes: 'toast-style',
           });
-          // alert('Thank you - your message has been sent.');
         } else if (response.data.status === 'fail') {
           M.toast({
             html: 'Sorry, something went wrong - please try again later',
             classes: 'toast-style',
           });
-          // alert('Message failed to send (:');
         }
       });
-      // M.updateTextFields();
+
       resetForm();
     } else {
       setShowSending(false);
       console.log('invalid form');
     }
-
-    setTimeout(() => {
-      setTimeout(setShowSending(false));
-    }, 3000);
   };
 
   const resetForm = () => {
