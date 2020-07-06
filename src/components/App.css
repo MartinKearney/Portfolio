@@ -20,6 +20,11 @@ h3 {
   color: #ddd;
 }
 
+.toast-style {
+  border: 1px solid #fff;
+  background: #757575;
+}
+
 @media only screen and (min-width: 601px) {
   .container {
     width: 95%;

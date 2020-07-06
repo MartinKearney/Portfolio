@@ -11,7 +11,7 @@ const ContactSection = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-
+  const [showSending, setShowSending] = useState(false);
   const [sendAttemptMade, setSendAttemptMade] = useState(false);
 
   const handleNameChange = (e) => {
@@ -58,6 +58,7 @@ const ContactSection = () => {
       !checkNameForError() &&
       ((email && checkEmailForError()) || !email)
     ) {
+      setShowSending(true);
       const formData = { name, email, message };
 
       axios({
@@ -66,15 +67,20 @@ const ContactSection = () => {
         data: formData,
       }).then((response) => {
         if (response.data.status === 'success') {
-          M.toast({ html: 'Thanks - your message has been sent!' });
+          M.toast({
+            html: 'Thanks - your message has been sent!',
+            classes: 'toast-style',
+          });
           // alert('Thank you - your message has been sent.');
         } else if (response.data.status === 'fail') {
           M.toast({
             html: 'Sorry, something went wrong - please try again later',
+            classes: 'toast-style',
           });
           // alert('Message failed to send (:');
         }
       });
+      setShowSending(false);
       resetForm();
     } else {
       console.log('invalid form');
@@ -98,10 +104,10 @@ const ContactSection = () => {
           className='col s12 Form-Container'
           style={{ borderRadius: '12px' }}
         >
-          <div
-            className='row'
-            style={{ marginBottom: '0', paddingTop: '4rem' }}
-          >
+          <div className={`sendingMsgText ${showSending ? 'visible' : ''}`}>
+            <p>Sending message...</p>
+          </div>
+          <div className='row' style={{ marginBottom: '0' }}>
             <div className='input-field col s12 m10 offset-m1 l6 offset-l3'>
               <i className='material-icons prefix'>emoji_people</i>
               {/* <i className='material-icons prefix'>person</i> */}
